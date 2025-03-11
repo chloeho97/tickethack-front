@@ -42,3 +42,15 @@ fetch('http://localhost:3000/search', {
           }
 })
 })
+
+
+
+// Click sur un bouton "Book"
+
+let allBookButton = document.querySelectorAll('.book-button');
+
+allBookButton.forEach(button => {
+    allBookButton[i].addEventListener('click',function(){
+        
+    })
+})
