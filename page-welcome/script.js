@@ -14,7 +14,7 @@ function bookButtonListener() {
             price: this.getAttribute('data-price')
             }
             
-        fetch('http://localhost:3000/search/addTripCart', {
+        fetch('http://localhost:3000/cart/addTripCart', {
             method: 'POST',
             headers : {'Content-Type':'application/json'},
             body: JSON.stringify(addTripCart)
