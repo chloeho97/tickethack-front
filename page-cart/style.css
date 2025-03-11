@@ -38,14 +38,17 @@ body {
 
 /* ------------------------ HEADER ------------------------ */
 
-#header span {
+#welcome-link {
     color:rgb(69, 158, 133);
     font-weight: bold;
     padding-left: 20px;
+    text-decoration: none;
 }
 
-#bookings-link {
+#cart-link, #bookings-link {
     padding: 0px 30px;
+    color: black;
+    text-decoration: none;
 }
 
 
