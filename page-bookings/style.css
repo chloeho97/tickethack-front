@@ -38,14 +38,22 @@ body {
 
 /* ------------------------ HEADER ------------------------ */
 
-#header span {
+#welcome-link {
     color:rgb(69, 158, 133);
     font-weight: bold;
     padding-left: 20px;
+    text-decoration: none;
+    font-size:large;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#bookings-link {
-    padding: 0px 30px;
+#cart-link, #bookings-link {
+    padding: 0px 20px;
+    color: black;
+    text-decoration: none;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: small;
+    font-weight: bold;
 }
 
 
