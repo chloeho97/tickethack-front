@@ -11,6 +11,7 @@ body {
     grid-template-rows: repeat(20, 1fr);
     grid-template-columns: repeat(9, 1fr);
     background-color: rgb(239, 242, 241);
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #header {
@@ -25,12 +26,17 @@ body {
 }
 
 #bookings-container {
-    grid-row-start: 7;
+    grid-row-start: 9;
     grid-row-end: 15;
     grid-column-start: 3;
     grid-column-end: 8;    
     background-color: white;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 
@@ -44,14 +50,12 @@ body {
     padding-left: 20px;
     text-decoration: none;
     font-size:large;
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #cart-link, #bookings-link {
     padding: 0px 20px;
     color: black;
     text-decoration: none;
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
     font-size: small;
     font-weight: bold;
 }
@@ -60,14 +64,13 @@ body {
 /* ------------------------ BOOKINGS ------------------------ */
 
 #bookings-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-weight: bold;
 }
 
-#bookings-footer {
+#bookings-footer{
+    text-align: center;
+}
+
+#enjoy-message {
     color: rgb(69, 158, 133);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
