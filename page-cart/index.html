@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tickethack</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div id="container">
+
+        <div id="header">
+            <a id="welcome-link" href="../page-welcome/index.html">Tickethack</a>
+            <div>
+                <a id="cart-link" href="./index.html">Cart</a>
+                <a id="bookings-link" href="../page-bookings/index.html">Bookings</a>
+            </div>
+        </div>
+
+        <div id="cart-container">
+
+            <div id="cart-main">
+                <span>My cart</span>
+                <div id="trips-in-cart">
+                    <!-- Ajouter trajets avec le DOM -->
+                </div>
+            </div>
+
+            <div id="cart-footer">
+                <span>Total :</span>
+                <button type="button" id="btn-purchase" >Purchase</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src='script.js'></script>
 </body>
+
 </html>
