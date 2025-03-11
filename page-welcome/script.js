@@ -42,3 +42,22 @@ fetch('http://localhost:3000/search', {
           }
 })
 })
+
+
+
+// Click sur un bouton "Book"
+
+let allBookButton = document.querySelectorAll('.book-button');
+
+allBookButton.forEach(button => {
+    button.addEventListener('click',function() {
+        
+
+        fetch('http://localhost:3000/search', {
+            method: 'POST',
+            headers : {'Content-Type':'application/json'},
+            body: JSON.stringify(userInput)
+        })
+
+    })
+})
