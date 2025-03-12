@@ -108,10 +108,10 @@ purchaseButton.addEventListener('click', function() {
     })
     .catch((err) => {
         console.error('Error during purchase:', err);
-    });
+    })
     
 
     // Puis rediriger vers page Bookings
-    window.location.replace("../page-bookings/index.html");
-    
+    .then(window.location.replace("../page-bookings/index.html"));
+
 });
