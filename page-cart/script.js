@@ -41,16 +41,16 @@ fetch('http://localhost:3000/cart/addTripCart')
         const tripDiv = document.createElement('div');
 
         tripDiv.innerHTML = `
-            <div class="tripBooked"
+            <div class="tripBooked">
                 <p>${trip.departure} > ${trip.arrival}</p>
-                <p>${new Date(trip.date).toLocaleDateString()}</p>
+                <p>${new Date(trip.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                 <p>${trip.price} €</p>
                 <button class="cancel-button" 
                                     data-departure="${trip.departure}" 
                                     data-arrival="${trip.arrival}" 
                                     data-date="${trip.date}" 
                                     data-price="${trip.price}">
-                                ❎
+                                X
                             </button>
             </div>
         `;

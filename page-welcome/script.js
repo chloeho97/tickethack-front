@@ -1,11 +1,3 @@
-
-// Activer/désactiver le menu hamburger
-document.getElementById("menu-toggle").addEventListener("click", function () {
-    const nav = document.getElementById("nav-links");
-    nav.classList.toggle("show");
-}) ;
-
-
 // Click sur un bouton "Book" - envoi du trajet dans la collection 'cart' 
 
 function bookButtonListener() {
@@ -71,7 +63,7 @@ fetch('http://localhost:3000/search', {
                     addTrip += `
                     <div class="trip-item">
                         <p>${trip.departure} > ${trip.arrival}</p>
-                        <p>${new Date(trip.date).toLocaleDateString()}</p>
+                         <p>${new Date(trip.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
                         <p>${trip.price} €</p>
                         <button class="book-button" 
                                 data-departure="${trip.departure}" 
@@ -82,6 +74,9 @@ fetch('http://localhost:3000/search', {
                         </button>
                     </div>`
             })
+
+           
+        
 
             resultContainer.innerHTML += addTrip;
 

@@ -9,22 +9,40 @@
 </head>
 
 <body>
-    <div id="container">
 
-        <div id="header">
-            <a id="welcome-link" href="../page-welcome/index.html">Tickethack</a>
-            <div>
-                <a id="cart-link" href="../page-cart/">Cart</a>
-                <a id="bookings-link" href="./index.html">Bookings</a>
-            </div>
-        </div>
+
+    <div id="header">
+        <a id="welcome-link" href="../page-welcome/">Tickethack</a>
+        <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+            ☰
+        </button>
+        <nav id="nav-links" class="nav">
+            <a id="cart-link" href="../page-cart/index.html">Cart</a>
+            <a id="bookings-link" href="../page-bookings/index.html">Bookings</a>
+        </nav>
+    </div>
+
+
 
         <div id="bookings-container">
 
             <div id="bookings-main">
                 <span>My bookings</span>
                 <div id="trips-in-bookings">
-                    <!-- Ajouter trajets avec le DOM -->
+
+                    <div class="tripBooked">
+                        <p> PARIS MARSEILLE </p>
+                        <p>10:35</p>
+                        <p>118 €</p>
+                    </div>
+
+                    <div class="tripBooked">
+                        <p> PARIS MARSEILLE </p>
+                        <p>10:35</p>
+                        <p>118 €</p>
+                    </div>
+
+
                 </div>
             </div>
 
@@ -36,9 +54,9 @@
             
         </div>
 
-    </div>
 
     <script src='script.js'></script>
+    <script src='menu.js'></script>
 </body>
 
 </html>

@@ -1,44 +1,21 @@
 body {
+    height: 100vh;
     margin: 0;
+    background-color: rgb(239, 242, 241);
 }
 
 /* ------------------------ LAYOUT ------------------------ */
 
-#container {
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-rows: repeat(20, 1fr);
-    grid-template-columns: repeat(9, 1fr);
-    background-color: rgb(239, 242, 241);
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
-}
+
 
 #header {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 10;
     display: flex;
     justify-content: space-between;
     align-items:center;
     background-color:white ;
+    height: 5vh;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
-
-#bookings-container {
-    grid-row-start: 9;
-    grid-row-end: 15;
-    grid-column-start: 3;
-    grid-column-end: 8;    
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
 
 
 
@@ -61,16 +38,122 @@ body {
 }
 
 
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Styles pour mobile */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #f8f9fa;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #nav-links.show {
+        display: flex;
+    }}
+
+
 /* ------------------------ BOOKINGS ------------------------ */
 
-#bookings-main{
+#bookings-container {
+    width: 80%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre parfaitement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;}
+
+
+#bookings-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bookings-main span {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 3%;
+}
+
+#trips-in-bookings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+}
+
+.tripBooked {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F7F1F0;
+    font-size: 13px;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 3%;
+    padding: 1%;
+}
+
+    #bookings-footer{
+        text-align: center;
+        padding: 5%;
+    }
+
+    #enjoy-message {
+        color: rgb(69, 158, 133);
+        font-family: Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    
+
+/* #bookings-main{
     font-weight: bold;
 }
 
-#bookings-footer{
+#bookings-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     text-align: center;
 }
 
-#enjoy-message {
-    color: rgb(69, 158, 133);
+
+
+
+
+
+.tripBooked {
+    display: flex;
+    background-color: #F7F1F0;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 30px;
+    align-items: center;
 }
+
+.tripBooked p {
+    font-size: 13px;
+} 
