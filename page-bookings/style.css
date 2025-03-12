@@ -21,6 +21,11 @@ body {
 
 /* ------------------------ HEADER ------------------------ */
 
+#header {
+    padding-left : 3%;
+    padding-right: 3%;
+}
+
 #welcome-link {
     color:rgb(69, 158, 133);
     font-weight: bold;
