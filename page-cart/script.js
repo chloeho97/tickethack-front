@@ -1,3 +1,18 @@
+
+// Création de la fonction de calcul du total des prix 
+
+function displayTotalPrice() {
+    fetch('http://localhost:3000/cart/totalPrice')
+    .then(response => response.json())
+    .then((data) => {
+        const totalContainer = document.querySelector('#total-price');
+        totalContainer.textContent = `${data.total} €`;
+    })
+    .catch((err) => {
+        console.error('Error while fetching total price:', err);
+    });
+}
+
 // Création du bouton X permettant de supprimer un trajet du panier
 
 function deleteTripCart () {
@@ -22,6 +37,7 @@ function deleteTripCart () {
                 }).then((response) => response.json())
                 .then((data) => {
                     this.parentNode.remove()
+                    displayTotalPrice();
                 })
                 .catch((err) => {
                     console.error('Error while adding to cart:', err);
@@ -55,5 +71,6 @@ fetch('http://localhost:3000/cart/addTripCart')
             </div>
         `;
         tripsContainer.appendChild(tripDiv)});
+        displayTotalPrice();
         deleteTripCart();
     });

@@ -249,6 +249,14 @@ body {
 }
 
 
+@media (max-width: 768px) {
+    #result-container {
+        max-height: 30vh; /* Hauteur ajustée pour mobile */
+        overflow-y: auto; /* Permet le défilement vertical */
+    }
+}
+
+
 /* ------------------------ BOTH CONTAINER ------------------------ */
 
 #wrapper {
