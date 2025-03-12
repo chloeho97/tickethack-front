@@ -1,3 +1,10 @@
+
+// Activer/désactiver le menu hamburger
+document.getElementById("menu-toggle").addEventListener("click", function () {
+    const nav = document.getElementById("nav-links");
+    nav.classList.toggle("show");}),
+
+
 // Click sur un bouton "Book" - envoi du trajet dans la collection 'cart' 
 
 function bookButtonListener() {
@@ -52,14 +59,14 @@ fetch('http://localhost:3000/search', {
 })
     .then(response => response.json())
     .then(data => {
-        if (data && data["Trajets trouvés"].length > 0) {
+        if (data && data["Trips found"].length > 0) {
 
             const resultContainer = document.querySelector('#result-container');
             resultContainer.innerHTML = ''
 
             let addTrip ='';
 
-            data["Trajets trouvés"].forEach(trip => {
+            data["Trips found"].forEach(trip => {
                     addTrip += `
                     <div class="trip-item">
                         <p>${trip.departure} > ${trip.arrival}</p>
@@ -81,6 +88,10 @@ fetch('http://localhost:3000/search', {
 
           } 
           else {
+
+            document.querySelector('#result-container img').src = 'images/notfound.png'; 
+
+            document.querySelector('#textResultSearch').innerHTML = "";
             document.querySelector('#textResultSearch').textContent += " No trip found."
           }
 })

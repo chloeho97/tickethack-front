@@ -9,16 +9,20 @@
 </head>
 
 <body>
+
+    <div id="header">
+        <a id="welcome-link" href="./index.html">Tickethack</a>
+        <button id="menu-toggle" class="hamburger" aria-label="Toggle menu">
+            ☰
+        </button>
+        <nav id="nav-links" class="nav">
+            <a id="cart-link" href="../page-cart/index.html">Cart</a>
+            <a id="bookings-link" href="../page-bookings/index.html">Bookings</a>
+        </nav>
+    </div>
+
     <div id="container">
-
-        <div id="header">
-            <a id="welcome-link" href="./index.html">Tickethack</a>
-            <div>
-                <a id="cart-link" href="../page-cart/index.html">Cart</a>
-                <a id="bookings-link" href="../page-bookings/index.html">Bookings</a>
-            </div>
-        </div>
-
+        
         <div id="description-container">
             <div id="description">
                 <h2>Explore the world effortlessly by train!</h2>
@@ -26,30 +30,47 @@
             </div>
         </div>
 
-        <div id="search-container">
-            <div>
-                <input id="searchDeparture" type="text" placeholder="Departure" class="input-fields">
-                <input id="searchArrival" type="text" placeholder="Arrival" class="input-fields">
-                <br><br><br>
-                <input id="searchDate" type="date" class="input-fields">
-                <br><br><br>
-                <br><br>
-                <button type="button" id="btn-search" >Search</button>
+        <div id="wrapper">
+            <div id="bothContainer">
+                <div id="search-container">
+                    <div>
+                        <input id="searchDeparture" type="text" placeholder="Departure" class="input-fields">
+                        <input id="searchArrival" type="text" placeholder="Arrival" class="input-fields">
+                        <br><br><br>
+                        <input id="searchDate" type="date" class="input-fields">
+                        <br><br><br>
+                        <br><br>
+                        <button type="button" id="btn-search">Search</button>
+                    </div>
+                </div>
+        
+                <div id="result-container">
+                    <img src="images/train.png" width="100px">
+                    <hr width="80%" size="1px" noshade color="teal" />
+                    <p id="textResultSearch">It's time to book your future trip.</p>
+                </div>
             </div>
-            
-        </div>
+
+    </div>
 
 
         
-        <div id="result-container">
-            <img src="images/train.png" width="100px">
-            <hr width="80%" size="1px" noshade color="teal" />
-            <p id="textResultSearch">It's time to book your future trip.</p>
-        </div>
+     
+<!-- 
+        <div class="trip-item">
+            <p>${trip.departure} > ${trip.arrival}</p>
+            <p>${new Date(trip.date).toLocaleDateString()}</p>
+            <p>${trip.price} €</p>
+            <button class="book-button" 
+                    data-departure="${trip.departure}" 
+                    data-arrival="${trip.arrival}" 
+                    data-date="${trip.date}" 
+                    data-price="${trip.price}">
+                Book
+            </button>
+        </div>`
 
-
-
-
+ -->
         <div id="footer">
 
         </div>
