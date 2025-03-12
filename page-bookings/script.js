@@ -1,6 +1,10 @@
 fetch('http://localhost:3000/booking/')
 .then(response => response.json())
 .then((responseData) => {
+
+    if (responseData) {
+
+    document.querySelector('#NoTrip').innerHTML += ''
     const booksContainer = document.querySelector('#trips-in-bookings');
 
     responseData.data.forEach(booking => {
@@ -26,7 +30,7 @@ fetch('http://localhost:3000/booking/')
             </div> `
 
             booksContainer.appendChild(bookingDiv)});
-       ;});
+       ;}});
 
 
 /* // Afficher tous les trajets ajoutés aux réservations
