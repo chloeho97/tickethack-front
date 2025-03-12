@@ -44,7 +44,7 @@ function deleteTripCart () {
                 });
             });
             })
-            }
+};
 
 
 // Afficher tous les trajets ajoutés au panier + fonction X -> suppression de trajet du panier (côté DOM & côté BDD)
@@ -73,4 +73,45 @@ fetch('http://localhost:3000/cart/addTripCart')
         tripsContainer.appendChild(tripDiv)});
         displayTotalPrice();
         deleteTripCart();
+});
+
+
+
+// Envoyer les voyages du panier dans les réservations au click sur le bouton Purchase
+const purchaseButton = document.querySelector('#btn-purchase');
+purchaseButton.addEventListener('click', function() {
+    
+    //fetch('http://localhost:3000/booking/purchase');
+
+    let allButtons = document.querySelectorAll('.cancel-button');
+    let buttonArray = [];
+
+    for (let i=0; i < allButtons.length; i++) {
+
+        let tripInCart = {
+            departure: this.getAttribute('data-departure'),
+            arrival: this.getAttribute('data-arrival'),
+            date: this.getAttribute('data-date'),
+            price: this.getAttribute('data-price')
+            }
+        buttonArray.push(tripInCart);
+    }
+
+    
+    fetch('http://localhost:3000/booking/purchase', {
+        method: 'POST',
+        headers : {'Content-Type':'application/json'},
+        body: JSON.stringify(buttonArray) // ça envoie quoi ???
+    }).then((response) => response.json())
+    .then((data) => {
+        console.log('Purchased:', data);
+    })
+    .catch((err) => {
+        console.error('Error during purchase:', err);
     });
+    
+
+    // Puis rediriger vers page Bookings
+    window.location.replace("../page-bookings/index.html");
+    
+});
