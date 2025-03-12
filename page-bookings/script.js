@@ -1,20 +1,35 @@
-fetch('http://localhost:3000/cart/')
+fetch('http://localhost:3000/booking/')
 .then(response => response.json())
 .then((responseData) => {
     const booksContainer = document.querySelector('#trips-in-bookings');
 
     responseData.data.forEach(booking => {
+
         const bookingDiv = document.createElement('div');
+        
+         const now = new Date();
+         const departureDate = new Date(booking.date);
+
+       
+         const timeDifference = departureDate - now;
+
+         // Convertir la différence en heures
+         const timeLeft = Math.abs(Math.round(timeDifference / (1000 * 60 * 60))); 
 
         bookingDiv.innerHTML = `
             <div class="tripBooked">
-                <p>${trip.departure} > ${trip.arrival}</p>
-                <p>${new Date(trip.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
-                <p>${trip.price} €</p>
-            </div>
-        `;})
-    });
-// Afficher tous les trajets ajoutés aux réservations
+                <p>${booking.departure} > ${booking.arrival}</p>
+                <p>${new Date(booking.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                <p>${booking.price} €</p>
+                <p>Departure in ${timeLeft} hours</p>
+                <p> </p>
+            </div> `
+
+            booksContainer.appendChild(bookingDiv)});
+       ;});
+
+
+/* // Afficher tous les trajets ajoutés aux réservations
 fetch('http://localhost:3000/booking', {
     method: 'POST',
     headers : {'Content-Type':'application/json'},
@@ -44,3 +59,4 @@ fetch('http://localhost:3000/booking', {
         
         } // Pas de else, on va plutôt mettre direct dans index.html ce qui est affiché si aucun trajet réservé
 })
+ */
