@@ -211,8 +211,8 @@ body {
 #bothContainer {
     display: flex; 
     justify-content: space-between; 
-    gap: 20px; 
-    width: 50%; 
+    gap: 50px; 
+    width: 60%; 
     height: 50vh;
 }
 
@@ -227,8 +227,9 @@ body {
 
 @media (max-width: 768px) {
     #bothContainer {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    width: 85%;
     }}
 
 

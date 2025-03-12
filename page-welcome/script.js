@@ -2,7 +2,8 @@
 // Activer/désactiver le menu hamburger
 document.getElementById("menu-toggle").addEventListener("click", function () {
     const nav = document.getElementById("nav-links");
-    nav.classList.toggle("show");}),
+    nav.classList.toggle("show");
+}) ;
 
 
 // Click sur un bouton "Book" - envoi du trajet dans la collection 'cart' 
