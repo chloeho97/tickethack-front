@@ -49,15 +49,9 @@ fetch('http://localhost:3000/cart/addTripCart')
                                     data-departure="${trip.departure}" 
                                     data-arrival="${trip.arrival}" 
                                     data-date="${trip.date}" 
-<<<<<<< HEAD
-                                    data-price="${trip.price}" >
-                    ❎
-                </button>
-=======
                                     data-price="${trip.price}">
                                 X
                             </button>
->>>>>>> 1415677fdc5c6f010e7774cc1ab3c9fb8622de39
             </div>
         `;
         tripsContainer.appendChild(tripDiv)});
@@ -101,6 +95,6 @@ purchaseButton.addEventListener('click', function() {
     
 
     // Puis rediriger vers page Bookings
-
+    window.location.replace("../page-bookings/index.html");
     
 });
